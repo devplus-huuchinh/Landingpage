@@ -52,3 +52,51 @@ closeSubNav.addEventListener('click', function () {
    iconSubMenu.classList.add('bx-chevron-down');
    iconSubMenu.classList.remove('bx-chevron-up');
 });
+// lightbox toogle menu
+const images = document.querySelectorAll('.menu__gallery img');
+images.forEach((item) => item.addEventListener('click', handleZoomImage));
+
+function handleZoomImage(event) {
+   const imageSrc = event.target.getAttribute('src');
+   console.log('imageSrc', imageSrc);
+   const template = `<div class="lightbox">
+      <div class="lightbox-content">
+      <i class='bx bxs-left-arrow lightbox-prev'></i>
+         <img src="${imageSrc}" alt="" class="lightbox-image">
+         <i class='bx bxs-right-arrow lightbox-next'></i>
+      <div>
+   </div>`;
+   document.body.insertAdjacentHTML('beforeend', template);
+}
+let index = 0;
+document.body.addEventListener('click', function (e) {
+   const lightboxImage = document.querySelector('.lightbox-image');
+   let lightboxSrc = '';
+   if (e.target.matches('.lightbox')) {
+      e.target.parentNode.removeChild(e.target);
+   } else if (e.target.matches('.lightbox-next')) {
+      lightboxSrc = lightboxImage.getAttribute('src');
+      index = [...images].findIndex(
+         (item) => item.getAttribute('src') === lightboxSrc
+      );
+      index = index + 1;
+      if (index > images.length - 1) {
+         index = 0;
+      }
+      const newSrc = [...images][index].getAttribute('src');
+      lightboxImage.setAttribute('src', newSrc);
+   } else if (e.target.matches('.lightbox-prev')) {
+      lightboxSrc = lightboxImage.getAttribute('src');
+      index = [...images].findIndex(
+         (item) => item.getAttribute('src') === lightboxSrc
+      );
+      index = index - 1;
+      if (index < 0) {
+         index = images.length - 1;
+      }
+      const newSrc = [...images][index].getAttribute('src');
+      lightboxImage.setAttribute('src', newSrc);
+   }
+});
+
+

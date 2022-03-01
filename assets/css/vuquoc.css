@@ -470,3 +470,39 @@ header.sticky .header__nav--link {
 .mobile-nav-toggle.button-nav-active .line-3 {
    transform: rotate(135deg);
 }
+
+.lightbox {
+   position: fixed;
+   inset: 0;
+   z-index: 999999;
+   background-color: rgba(0, 0, 0, 0.75);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.lightbox-content {
+   max-width: 1000px;
+   height: 100%;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 25px;
+}
+
+.lightbox-content img {
+   /* width: 90%; */
+   max-width: 100%;
+   height: 90%;
+   object-fit: cover;
+   border-radius: 4px;
+   user-select: none;
+}
+
+.lightbox-content i {
+   color: white;
+   font-size: 60px;
+   cursor: pointer;
+   flex-shrink: 0;
+}
