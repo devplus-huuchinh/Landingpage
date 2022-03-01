@@ -5,6 +5,7 @@
    --light-blue: #e7f4f6;
    --purple: #6f42c1;
    --white: #fff;
+   --dark-blue: #273c66;
 }
 html {
    font-size: 15px;
@@ -44,4 +45,11 @@ a {
 img {
    display: block;
    max-width: 100%;
+}
+
+.container {
+   width: 100%;
+   max-width: 1240px !important;
+   margin: 0 auto;
+   padding: 0 20px;
 }
