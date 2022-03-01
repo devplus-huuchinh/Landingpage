@@ -57,7 +57,7 @@
 .devplus__list__item:hover .devplus__list__item__icon img {
    transform: scale(0.9);
 }
-
+/*  */
 @media screen and (max-width: 900px) {
    .devplus__list {
       width: 100%;
