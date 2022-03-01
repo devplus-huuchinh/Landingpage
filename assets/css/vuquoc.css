@@ -16,7 +16,7 @@ header {
    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 header.sticky {
-   position: sticky;
+   position: fixed;
    top: 0;
    right: 0;
    left: 0;
@@ -26,10 +26,6 @@ header.sticky {
 }
 header.sticky .header__nav--link {
    line-height: 90px;
-}
-.header__nav {
-   list-style: none;
-   margin: 0;
 }
 .header__brand .header__image {
    max-height: 35px;
@@ -93,14 +89,16 @@ header.sticky .header__nav--link {
       width: 100%;
       background-color: #eee;
    }
-   .sub__nav--close > i {
+   .sub__nav--close a,
+   .sub__nav--close i {
       font-weight: bold;
       font-size: 20px;
       vertical-align: middle;
+      text-decoration: none;
    }
 }
 .header__nav--link {
-   padding: 0 30px;
+   padding: 0 25px;
    line-height: 120px;
    font-weight: 600;
    text-transform: uppercase;
@@ -121,12 +119,17 @@ header.sticky .header__nav--link {
 .sub__nav--item {
    display: block;
    padding: 10px 25px;
+   font-weight: 600;
+   color: var(--black);
+}
+.sub__nav--item:hover {
+   text-decoration: none;
 }
 .header__nav--link:hover {
    color: #226fb7;
    text-decoration: none;
 }
-.header__nav--link:hover + ul.sub__nav {
+.header__nav li:hover ul.sub__nav {
    opacity: 1;
    visibility: visible;
 }
@@ -151,20 +154,14 @@ header.sticky .header__nav--link {
    transform: translateY(-50%);
    transition: all 0.5s ease;
 }
-.item--parent:hover::before {
+.item--parent > i {
+   display: none;
+}
+
+.header__nav li:hover .item--parent::before {
    content: '-';
    transition: all 0.5s ease;
 }
-/* .item--parent::after {
-   content: '';
-   position: absolute;
-   top: 0;
-   right: 0;
-   left: 0;
-   width: 100%;
-   height: 90px;
-   background-color: #226fb7;
-} */
 .header__button--toggle .line {
    background-color: var(--black);
    width: 30px;
@@ -183,7 +180,32 @@ header.sticky .header__nav--link {
    top: calc(50% - 8px);
    transform: translateY(-50%);
 }
-/* hero */
+@media screen and (max-width: 991px) {
+   .item--parent::before {
+      content: '';
+   }
+   .header__nav li:hover .item--parent::before {
+      content: '';
+   }
+   .sub__nav {
+      display: none;
+   }
+   .item--parent > i {
+      position: absolute;
+      left: auto;
+      right: 10px;
+      top: 50%;
+      text-align: center;
+      display: block;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: all 0.5s ease;
+      font-size: 40px;
+   }
+   .sub__nav.open {
+      display: block;
+   }
+}
 .hero {
    padding: 125px 0 425px;
    background: url(../images/devplus/Devplus_missions.png);
@@ -240,7 +262,6 @@ header.sticky .header__nav--link {
       font-size: 15px;
    }
 }
-/* menu */
 .toggle-menu {
    z-index: 9999;
    top: 0;
@@ -328,6 +349,21 @@ header.sticky .header__nav--link {
       margin-top: 70px;
    }
 }
+@media screen and (max-width: 575px) {
+   .about__fact {
+      padding: 40px 30px 50px;
+   }
+   .about__devplus {
+      font-size: 16px;
+   }
+   .about__fact--title {
+      font-size: 25px !important;
+      line-height: 30px !important;
+   }
+   .about__road {
+      padding: 0;
+   }
+}
 .road__header {
    background: #226fb7;
    font-size: 20px;
@@ -386,4 +422,51 @@ header.sticky .header__nav--link {
    font-size: 18px;
    font-weight: 400;
    line-height: 30px;
+}
+@media screen and (min-width: 992px) {
+   .mobile-nav-toggle {
+      display: none !important;
+   }
+}
+.mobile-nav-toggle {
+   width: 34px;
+   height: 34px;
+   z-index: 9999;
+   cursor: pointer;
+   border-radius: 50px;
+}
+.mobile-nav-toggle .line {
+   background-color: var(--blue);
+   width: 25px;
+   height: 2px;
+   transition: all 0.3s ease;
+   z-index: -1;
+}
+.mobile-nav-toggle .line-1 {
+   top: calc(50% + 5px);
+   transform: translateY(-50%);
+}
+.mobile-nav-toggle .line-2 {
+   top: 50%;
+   transform: translateY(-50%);
+}
+.mobile-nav-toggle .line-3 {
+   top: calc(50% - 5px);
+   transform: translateY(-50%);
+}
+.mobile-nav-toggle.button-nav-active .line {
+   top: 15.5px;
+   transition: all 0.3s ease;
+}
+.mobile-nav-toggle.button-nav-active .line-1 {
+   transform: rotate(-135deg);
+}
+.mobile-nav-toggle.button-nav-active .line-2 {
+   width: 0;
+   height: 0;
+   opacity: 0;
+   transform: translateX(7rem);
+}
+.mobile-nav-toggle.button-nav-active .line-3 {
+   transform: rotate(135deg);
 }

@@ -1,4 +1,4 @@
-// Quốc
+// handle toggle menu bar
 const openMenu = document.querySelector('.header__button--toggle');
 const menu = document.querySelector('.toggle-menu');
 const closeMenu = document.querySelector('.menu__button--close');
@@ -17,7 +17,7 @@ closeMenu.addEventListener('mouseover', function () {
 closeMenu.addEventListener('mouseout', function () {
    iconClose.style.transform = 'rotate(0deg)';
 });
-
+// process header sticky
 const header = document.querySelector('header');
 window.addEventListener('scroll', function () {
    if (
@@ -29,11 +29,26 @@ window.addEventListener('scroll', function () {
       header.classList.remove('sticky');
    }
 });
-const mobileMenuBtn = document.querySelector('.mobile__toggle--btn');
-const iconBtn = document.querySelector('.mobile__toggle--btn i');
+// handle mobile menu
 const mobileMenu = document.querySelector('.header__nav');
-mobileMenuBtn.addEventListener('click', function () {
+const btnNavigation = document.querySelector('.mobile-nav-toggle');
+btnNavigation.addEventListener('click', function () {
+   btnNavigation.classList.toggle('button-nav-active');
    mobileMenu.classList.toggle('open-menu');
-   iconBtn.classList.toggle('bx-list-ul');
-   iconBtn.classList.toggle('bx-x');
+});
+
+// handle sub mobile menu
+const itemParent = document.querySelector('.item--parent');
+const iconSubMenu = document.querySelector('.item--parent i');
+const subNav = document.querySelector('.sub__nav');
+const closeSubNav = document.querySelector('.sub__nav--close a');
+itemParent.addEventListener('click', function () {
+   subNav.classList.toggle('open');
+   iconSubMenu.classList.toggle('bx-chevron-down');
+   iconSubMenu.classList.toggle('bx-chevron-up');
+});
+closeSubNav.addEventListener('click', function () {
+   subNav.classList.remove('open');
+   iconSubMenu.classList.add('bx-chevron-down');
+   iconSubMenu.classList.remove('bx-chevron-up');
 });
