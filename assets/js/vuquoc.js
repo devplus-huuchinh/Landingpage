@@ -90,7 +90,7 @@
    const preloader = document.querySelector('#preloader');
    if (preloader) {
       setTimeout(() => {
-         preloader.remove();
+         // preloader.remove();
       }, 1000);
    }
    // popup lightbox image
