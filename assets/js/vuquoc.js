@@ -75,16 +75,21 @@
    images.forEach((item) => item.addEventListener('click', handleZoomImage));
 
    function handleZoomImage(event) {
+      document.querySelector('.toggle-menu').style.right = '-500px';
       const imageSrc = event.target.getAttribute('src');
-      console.log('imageSrc', imageSrc);
       const template = `<div class="lightbox position-fixed">
-      <div class="lightbox-content d-flex align-items-center justify-content-between" data-aos="zoom-in">
+      <div class="lightbox-content d-flex align-items-center justify-content-between">
+      <i class='bx bx-x lightbox__button--close'></i>
       <i class='bx bxs-left-arrow lightbox-prev'></i>
-         <img src="${imageSrc}" alt="" class="lightbox-image" data-aos="zoom-in">
+         <img src="${imageSrc}" alt="" class="lightbox-image" data-aos="zoom-in-down">
          <i class='bx bxs-right-arrow lightbox-next'></i>
       </div>
    </div>`;
       document.body.insertAdjacentHTML('beforeend', template);
+      const closeLightBox = document.querySelector('.lightbox__button--close');
+      closeLightBox.addEventListener('click', () => {
+         document.querySelector('.lightbox').remove();
+      });
    }
    let index = 0;
    document.body.addEventListener('click', function (e) {
