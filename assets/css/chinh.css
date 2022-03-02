@@ -26,10 +26,13 @@
 
 .author .author-quote .quote {
    font-size: 24px;
+   font-style: italic;
+   text-align: center;
+   font-weight: 500;
    min-height: 400px;
    height: 100%;
    padding-top: 20px;
-   padding-left: 20px;
+   padding-left: 25px;
    padding-right: 15px;
    padding-bottom: 40px;
 }
@@ -57,7 +60,16 @@
    color: #226fb7;
    font-weight: 700;
 }
-
+.owl-theme .owl-dots .owl-dot span {
+   width: 50px !important;
+   background: #226fb7 !important;
+   opacity: 0.5;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+   width: 50px !important;
+   background: #226fb7 !important;
+   opacity: 1;
+}
 footer {
    background-image: url(../images/bg/footer-bg.png);
    background-size: cover;
@@ -111,6 +123,7 @@ footer .footer-top .footer-devplus li a:hover,
 footer .footer-top .footer-campus li a:hover {
    color: #226fb7;
    text-decoration: none;
+   transition: 0.5s;
 }
 
 footer .footer-top .footer-address li {
@@ -151,13 +164,15 @@ footer .footer-bot .footer-bot__facebook {
 }
 
 footer .footer-bot .footer-bot__facebook i {
-   font-size: 25px;
+   font-size: 15px;
    color: #226fb7;
 }
 
 footer .footer-bot .footer-bot__facebook a {
-   font-size: 25px;
+   font-size: 15px;
    color: gray;
+   font-weight: 400;
+   line-height: 15px;
 }
 
 footer .footer-bot .footer-bot__facebook a:hover {
