@@ -1,6 +1,5 @@
 #preloader {
    background: #fff url(../images/devplus/logo_loading.png) no-repeat center;
-   position: fixed;
    top: 0;
    left: 0;
    width: 100%;
@@ -16,9 +15,8 @@
    animation: spinner 0.5s infinite alternate;
 }
 .back-to-top {
-   position: fixed;
-   bottom: 50px;
-   right: 50px;
+   bottom: 40px;
+   right: 20px;
    width: 40px;
    height: 40px;
    border-radius: 100rem;
@@ -84,6 +82,7 @@ header.sticky .header__nav--link {
    header nav {
       height: 90px;
       flex-wrap: nowrap !important;
+      transition: all 0.3s ease;
    }
    .header__button--toggle {
       display: none !important;
@@ -316,16 +315,24 @@ header.sticky .header__nav--link {
 }
 .menu__button--close {
    background-color: var(--blue);
-   width: 30px;
-   height: 30px;
+   width: 40px;
+   height: 40px;
    border-radius: 100rem;
    cursor: pointer;
 }
-.menu__button--close i {
-   font-size: 35px;
-   font-weight: 100;
-   color: var(--white) !important;
-   transition: all 0.25s linear;
+.menu__button--close .line-wrap {
+   transition: all 0.5s ease;
+}
+.line-wrap .line {
+   background-color: var(--white);
+   width: 25px;
+   height: 1px;
+}
+.line-wrap .line1 {
+   transform: rotate(45deg);
+}
+.line-wrap .line2 {
+   transform: rotate(-45deg);
 }
 
 .menu__image {
@@ -368,6 +375,9 @@ header.sticky .header__nav--link {
    transition: all 0.25s linear;
 }
 /* about */
+.about {
+   padding-bottom: 70px;
+}
 .about__fact {
    background: #e7f4f6;
    padding: 60px 60px 70px;
@@ -514,7 +524,6 @@ header.sticky .header__nav--link {
 }
 
 .lightbox-content {
-   /* max-width: 1000px; */
    width: 100%;
    height: 100%;
    margin: 0 auto;
@@ -525,7 +534,7 @@ header.sticky .header__nav--link {
    top: 30px;
    right: 30px;
 }
-.lightbox-content img {
+.lightbox-content .lightbox-image {
    max-width: 100%;
    height: 90%;
    object-fit: cover;

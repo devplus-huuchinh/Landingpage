@@ -4,7 +4,7 @@
    const openMenu = document.querySelector('.header__button--toggle');
    const menu = document.querySelector('.toggle-menu');
    const closeMenu = document.querySelector('.menu__button--close');
-   const iconClose = closeMenu.querySelector('i');
+   const lineWrap = closeMenu.querySelector('.line-wrap');
 
    openMenu.addEventListener('click', function () {
       menu.style.right = '0';
@@ -14,10 +14,10 @@
    });
 
    closeMenu.addEventListener('mouseover', function () {
-      iconClose.style.transform = 'rotate(180deg)';
+      lineWrap.style.transform = 'rotate(360deg)';
    });
    closeMenu.addEventListener('mouseout', function () {
-      iconClose.style.transform = 'rotate(0deg)';
+      lineWrap.style.transform = 'rotate(0deg)';
    });
    // back to top button
    const backtotop = document.querySelector('.back-to-top');
@@ -93,7 +93,6 @@
    }
    let index = 0;
    document.body.addEventListener('click', function (e) {
-      // document.querySelector('.toggle-menu').style.right = '-500px';
       const lightboxImage = document.querySelector('.lightbox-image');
       let lightboxSrc = '';
       if (e.target.matches('.lightbox')) {

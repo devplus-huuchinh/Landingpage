@@ -26,9 +26,9 @@
 </head>
 
 <body>
-   <div id="preloader" class="d-flex justify-content-center align-items-center">
+   <div id="preloader" class="d-flex justify-content-center align-items-center position-fixed">
    </div>
-   <div class="back-to-top">
+   <div class="back-to-top position-fixed">
       <i class='bx bxs-chevron-up'></i>
    </div>
    <!-- Quốc -->
@@ -51,9 +51,9 @@
                <li class="position-relative"><a href="#" class="header__nav--link item--parent">Our
                      Programme <i class='bx bx-chevron-down'></i></a>
                   <ul class="sub__nav position-absolute bg-white list-unstyled">
-                     <li><a href="#" class="sub__nav--item">Action</a></li>
-                     <li><a href="#" class="sub__nav--item">Action</a></li>
-                     <li><a href="#" class="sub__nav--item">Action</a></li>
+                     <li><a href="#" class="sub__nav--item">One Plus Campus</a></li>
+                     <li><a href="#" class="sub__nav--item">Two Plus Campus</a></li>
+                     <li><a href="#" class="sub__nav--item">Three Plus Campus</a></li>
                      <li class="sub__nav--close"><a href="#"><i class='bx bx-x'></i> close</a></li>
                   </ul>
                </li>
@@ -69,7 +69,11 @@
       </div>
       <div class="toggle-menu position-fixed h-100 text-center overflow-auto">
          <div class="menu__button--close d-flex justify-content-center align-items-center">
-            <i class="bx bx-x"></i>
+            <!-- <i class="bx bx-x"></i> -->
+            <div class="line-wrap d-flex justify-content-center align-items-center position-relative">
+               <div class="line line1 position-absolute"></div>
+               <div class="line line2 position-absolute"></div>
+            </div>
          </div>
          <div class="menu__image">
             <img src="./assets/images/Artboard_2.png" alt="" class="mx-auto">
@@ -105,16 +109,16 @@
    <section class="hero" id="hero">
       <div class="container">
          <div class="hero__content">
-            <h2 class="hero__tilte" data-aos="fade-right">
+            <h2 class="hero__tilte" data-aos="fade-right" data-aos-delay="400" data-aos-duration="2000">
                Devplus Will Support The Early Stage Developers Go The Right Career Path
             </h2>
-            <p class="hero__desc" data-aos="fade-left">
+            <p class="hero__desc" data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000">
                Devplus is not a training center, it’s battle campus for you to level up your skillsets and ready to
                onboard
                any projects in our “kindest” companies listing
             </p>
-            <a href="" class="hero__button--more d-block text-decoration-none text-uppercase mx-auto"
-               data-aos="fade-up">Learn More</a>
+            <a href="#" class="hero__button--more d-block text-decoration-none text-uppercase mx-auto"
+               data-aos="fade-up" data-aos-delay="400" data-aos-duration="2000">Learn More</a>
          </div>
       </div>
    </section>
@@ -127,19 +131,24 @@
                      road to be a Devplus
                   </div>
                   <ul class="road__list list-unstyled">
-                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up">
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="100">
                         <span class="position-absolute">1</span><span>Apply
                            Devplus</span></li>
-                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up">
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="200">
                         <span class="position-absolute">2</span><span>Testing and
                            Interview</span></li>
-                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up">
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="300">
                         <span class="position-absolute">3</span><span>1st plus (+)
                            campus</span></li>
-                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up">
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="400">
                         <span class="position-absolute">4</span><span>2nd plus (++)
                            campus</span></li>
-                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up">
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="500">
                         <span class="position-absolute">5</span><span>Onboard & start
                            your career</span>
                      </li>
