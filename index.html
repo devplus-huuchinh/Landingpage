@@ -1,66 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
-         rel="stylesheet"
-      />
-      <link
-         rel="stylesheet"
-         href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-         crossorigin="anonymous"
-      />
-      <link
-         href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
-         rel="stylesheet"
-      />
-      <link rel="stylesheet" href="./assets/css/chinh.css" />
-      <link href="./assets/css/app.css" />
-      <link
+  
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="shortcut icon" type="image/x-icon" href="assets/images/devplus/logo_loading.png">
+   <!-- google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+   <!-- bootstrap 4 -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+   <!-- boxicon -->
+   <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+   <!-- aos -->
+   <link rel="stylesheet" href="./assets/js/vendor/aos/aos.css" />
+   <!-- style -->
+   <link rel="stylesheet" href="./assets/css/app.css" />
+   <link rel="stylesheet" href="./assets/css/vuquoc.css">
+   <link rel="stylesheet" href="./assets/css/thong.css">
+   <link rel="stylesheet" href="./assets/css/thanh.css">
+   <link rel="stylesheet" href="./assets/css/chinh.css" />
+   <link
          rel="stylesheet"
          href="./assets/owl-src/assets/owl.carousel.min.css"
-      />
-      <link
+    />
+    <link
          rel="stylesheet"
          href="./assets/owl-src/assets/owl.theme.default.min.css"
-      />
-      <title>DevPlus</title>
-   </head>
+    />
+   <title>Dev+ Mission is support the early stage developer go through the right career path</title>
+</head>
 
-   <body>
-      <!-- Quốc -->
-      <header>
-         <div class="container"></div>
-      </header>
-      <div class="toggle-modal"></div>
-      <!-- hero -->
-      <section class="hero">
-         <div class="container"></div>
-      </section>
-      <!-- main -->
-      <main>
-         <!-- Thống -->
-         <section class="devplus">
-            <div class="container"></div>
+<body>
+   <div id="preloader" class="d-flex justify-content-center align-items-center position-fixed">
+   </div>
+   <div class="back-to-top position-fixed">
+      <i class='bx bxs-chevron-up'></i>
+   </div>
+   <!-- Quốc -->
+   <header class="d-flex justify-content-center align-items-center">
+      <div class="container">
+         <nav class="row position-relative d-flex align-items-center justify-content-between ml-0 mr-0">
+            <div class="header__brand col-lg-2">
+               <img src="./assets/images/Artboard_2.png" alt="" class="header__image">
+            </div>
+            <div
+               class="mobile-nav-toggle d-flex align-items-center justify-content-center flex-column position-relative overflow-hidden ">
+               <div class="line line-1 position-absolute overflow-hidden"></div>
+               <div class="line line-2 position-absolute overflow-hidden"></div>
+               <div class="line line-3 position-absolute overflow-hidden"></div>
+            </div>
+            <!--  -->
+            <ul class="header__nav col-lg-9 d-flex align-items-center m-0 mr-auto list-unstyled">
+               <li class="position-relative"><a href="#" class="header__nav--link">Home</a></li>
+               <li class="position-relative"><a href="#about" class="header__nav--link">About DevPlus</a></li>
+               <li class="position-relative"><a href="#" class="header__nav--link item--parent">Our
+                     Programme <i class='bx bx-chevron-down'></i></a>
+                  <ul class="sub__nav position-absolute bg-white list-unstyled">
+                     <li><a href="#" class="sub__nav--item">One Plus Campus</a></li>
+                     <li><a href="#" class="sub__nav--item">Two Plus Campus</a></li>
+                     <li><a href="#" class="sub__nav--item">Three Plus Campus</a></li>
+                     <li class="sub__nav--close"><a href="#"><i class='bx bx-x'></i> close</a></li>
+                  </ul>
+               </li>
+               <li><a href="#" class="header__nav--link position-relative">Dev Plus Activities</a></li>
+            </ul>
+            <div
+               class="header__button--toggle position-relative overflow-hidden col-lg-1 d-flex justify-content-center align-items-center flex-column">
+               <div class="line line1 position-absolute"></div>
+               <div class="line line2 position-absolute"></div>
+               <div class="line line3 position-absolute"></div>
+            </div>
+         </nav>
+      </div>
+      <div class="toggle-menu position-fixed h-100 text-center overflow-auto">
+         <div class="menu__button--close d-flex justify-content-center align-items-center">
+            <!-- <i class="bx bx-x"></i> -->
+            <div class="line-wrap d-flex justify-content-center align-items-center position-relative">
+               <div class="line line1 position-absolute"></div>
+               <div class="line line2 position-absolute"></div>
+            </div>
+         </div>
+         <div class="menu__image">
+            <img src="./assets/images/Artboard_2.png" alt="" class="mx-auto">
+         </div>
+         <div class="menu__desc">
+            <p>Devplus's mission is filling the gap between school and corporate, reduce in-house training cost and
+               effort
+               for IT companies.</p>
+         </div>
+         <div class="menu__gallery photos d-flex flex-wrap">
+            <a href="#" class="gallery__item overflow-hidden"><img src="/assets/images/devplus/1.png" alt=""
+                  class="gallery-image"></a>
+            <a href="#" class="gallery__item overflow-hidden"><img src="/assets/images/devplus/2.png" alt=""
+                  class="gallery-image"></a>
+            <a href="#" class="gallery__item overflow-hidden"><img src="/assets/images/devplus/3.png" alt=""
+                  class="gallery-image"></a>
+            <a href="#" class="gallery__item overflow-hidden"><img src="/assets/images/devplus/4.png" alt=""
+                  class="gallery-image"></a>
+            <a href="#" class="gallery__item overflow-hidden"><img src="/assets/images/devplus/5.png" alt=""
+                  class="gallery-image"></a>
+            <a href="#" class="gallery__item overflow-hidden"><img src="/assets/images/devplus/6.png" alt=""
+                  class="gallery-image"></a>
+         </div>
+         <div class="menu__maps">
+            <img src="./assets/images/map.png" alt="">
+         </div>
+         <div class="menu__bottom">
+            <i class='bx bxl-facebook-circle'></i>
+         </div>
+      </div>
+   </header>
+   <!-- hero -->
+   <section class="hero" id="hero">
+      <div class="container">
+         <div class="hero__content">
+            <h2 class="hero__tilte" data-aos="fade-right" data-aos-delay="400" data-aos-duration="2000">
+               Devplus Will Support The Early Stage Developers Go The Right Career Path
+            </h2>
+            <p class="hero__desc" data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000">
+               Devplus is not a training center, it’s battle campus for you to level up your skillsets and ready to
+               onboard
+               any projects in our “kindest” companies listing
+            </p>
+            <a href="#" class="hero__button--more d-block text-decoration-none text-uppercase mx-auto"
+               data-aos="fade-up" data-aos-delay="400" data-aos-duration="2000">Learn More</a>
+         </div>
+      </div>
+   </section>
+   <section class="about" id="about">
+      <div class="container">
+         <div class="row flex-row-reverse">
+            <div class="col-lg-4">
+               <div class="about__road">
+                  <div class="road__header text-center text-uppercase user-select-none">
+                     road to be a Devplus
+                  </div>
+                  <ul class="road__list list-unstyled">
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <span class="position-absolute">1</span><span>Apply
+                           Devplus</span></li>
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <span class="position-absolute">2</span><span>Testing and
+                           Interview</span></li>
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <span class="position-absolute">3</span><span>1st plus (+)
+                           campus</span></li>
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <span class="position-absolute">4</span><span>2nd plus (++)
+                           campus</span></li>
+                     <li class="road__item position-relative d-flex flex-column overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="500">
+                        <span class="position-absolute">5</span><span>Onboard & start
+                           your career</span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-8 pr-lg-5">
+               <div class="about__fact">
+                  <div class="about__devplus text-uppercase">
+                     about Devplus
+                  </div>
+                  <h2 class="about__fact--title" data-aos="fade-up">
+                     The Fact: Skilled labour shortage for software companies but full of freshers and low level juniors
+                  </h2>
+                  <p class="about__fact--desc" data-aos="fade-up">
+                     Our responsibility is filling the gap between the quality of graduate students and the quality of
+                     engineers. Devplus will help reducing the cost of re-training and accelerating the skill-up
+                     progress of
+                     students and freshers.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- main -->
+   <main>
+      <!-- Thống -->
+      <section
+            class="devplus"
+            style="background-color: #f3f8f9; padding: 80px 0"
+         >
+            <div class="container">
+               <h2 class="title">
+                  What an engineer after Devplus will must have?
+               </h2>
+               <div class="devplus__list">
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/1.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Programing foundation</p>
+                        <p class="content">Algorithm, Design pattern</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/2.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Database</p>
+                        <p class="content">SQL Syntax</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/3.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Testing</p>
+                        <p class="content">Unit testing, TDD</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/4.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Front-end</p>
+                        <p class="content">HTML/CSS/Js, ReactJS/VueJs</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/5.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Back-end</p>
+                        <p class="content">PHP, NodeJS</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/6.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Agile Stable Team</p>
+                        <p class="content">Agile/Scrum</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/7.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">English</p>
+                        <p class="content">Basic conversion</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/8.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Communication</p>
+                        <p class="content">HORENSO</p>
+                     </div>
+                  </div>
+                  <div class="devplus__list__item">
+                     <div class="devplus__list__item__icon">
+                        <img src="./assets/images/categories/icons/9.png" />
+                     </div>
+                     <div class="devplus__list__item__content">
+                        <p class="title">Career path</p>
+                        <p class="content">Work ethic, Integrity</p>
+                    </div>
+                  </div>
+               </div>
+            </div>
          </section>
-         <!-- Thống  -->
-         <section class="campus">
-            <div class="container"></div>
+      <!-- Thống  -->
+      <section
+            class="campus"
+            style="
+               background-image: url('./assets/images/bg/home-8-bg.jpg');
+               padding: 80px 0;
+               background-size: cover;
+               background-position: center;
+            "
+         >
+            <div class="container">
+               <h2 class="title">Our main campus</h2>
+               <div class="campus__list">
+                  <div class="campus__card">
+                     <img src="./assets/images/devplus/One_plus.png" alt="" />
+                     <h3>One plus (+) Programing foundation</h3>
+                  </div>
+                  <div class="campus__card">
+                     <img src="./assets/images/devplus/Two_plus.png" alt="" />
+                     <h3>Two plus (++) Skill up to to get ready</h3>
+                  </div>
+                  <div class="campus__card">
+                     <img src="./assets/images/devplus/Three_plus.png" alt="" />
+                     <h3>Three plus (+++) How to become a senior</h3>
+                  </div>
+               </div>
+            </div>
          </section>
-         <!-- Thanh -->
-         <section class="admission"></section>
-         <!-- Thanh -->
-         <section class="common">
-            <div class="container"></div>
+      <!-- Thanh -->
+      <section class="admission">
+            <div class="admission__image">
+               <img src="./assets/images/devplus/Admission_for_2021.png" />
+            </div>
+            <div class="admission__description">
+               <h1 class="admission__description--items">Admission for 2021</h1>
+               <p class="admission__description--items">
+                  Disclaimer: This position is expected to start around Feb 2022
+                  and continue through the entire Summer term. We ask for a
+                  minimum of 12 weeks, full-time, for most internships. Please
+                  consider before submitting an application. Devplus aims to
+                  provide students the chance to work with our clients and
+                  awesome mentors to level up your programing skillset in the
+                  RIGHT path. With your education and experience, you will be
+                  able to take on real-world challenges from day one. APPLY NOW
+               </p>
+               <button
+                  type="button"
+                  class="btn btn-primary admission__description--items admission__description--button"
+               >
+                  APPLY NOW
+               </button>
+            </div>
          </section>
-         <!-- Chính -->
-         <section class="alumni pb-5">
+
+
+<section class="container common">
+            <div class="common__concerns">
+               <div class="common__heading common__concerns--items">
+                  <h2>Some common concerns</h2>
+               </div>
+               <div class="common__tabs common__concerns--items">
+                  <div class="accordion" id="accordionExample">
+                     <div class="card">
+                        <div class="card-header" id="headingOne">
+                           <h2 class="mb-0">
+                              <button
+                                 class="btn btn-link btn-block text-left"
+                                 type="button"
+                                 data-toggle="collapse"
+                                 data-target="#collapseOne"
+                                 aria-expanded="true"
+                                 aria-controls="collapseOne"
+                              >
+                                 Do I need to be fulltime during the campus?
+                              </button>
+                           </h2>
+                        </div>
+
+                        <div
+                           id="collapseOne"
+                           class="collapse show"
+                           aria-labelledby="headingOne"
+                           data-parent="#accordionExample"
+                        >
+                           <div class="card-body">
+                              Yes, it’s mandatory. Fulltime as well as full
+                              commitment in order to obtain the best
+                              achievement.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card">
+                        <div class="card-header" id="headingTwo">
+                           <h2 class="mb-0">
+                              <button
+                                 class="btn btn-link btn-block text-left collapsed"
+                                 type="button"
+                                 data-toggle="collapse"
+                                 data-target="#collapseTwo"
+                                 aria-expanded="false"
+                                 aria-controls="collapseTwo"
+                              >
+                                 Does Devplus offer free courses?
+                              </button>
+                           </h2>
+                        </div>
+                        <div
+                           id="collapseTwo"
+                           class="collapse"
+                           aria-labelledby="headingTwo"
+                           data-parent="#accordionExample"
+                        >
+                           <div class="card-body">
+                              Yes, it’s kind of a scholarship. But, you need to
+                              pass our challenge through test and interview
+                              round.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card">
+                        <div class="card-header" id="headingThree">
+                           <h2 class="mb-0">
+                              <button
+                                 class="btn btn-link btn-block text-left collapsed"
+                                 type="button"
+                                 data-toggle="collapse"
+                                 data-target="#collapseThree"
+                                 aria-expanded="false"
+                                 aria-controls="collapseThree"
+                              >
+                                 Which course will be suitable with me?
+                              </button>
+                           </h2>
+                        </div>
+                        <div
+                           id="collapseThree"
+                           class="collapse"
+                           aria-labelledby="headingThree"
+                           data-parent="#accordionExample"
+                        >
+                           <div class="card-body">
+                              The first plus (+) course is designed to students
+                              who would like to join the OJT (on-job-train)
+                              programme. Next level, the second plus (++) course
+                              will suitable for one who got the first plus or
+                              fresher, who would like to be trained in order to
+                              ready to onboard the real projects. The third plus
+                              (+++) course is intended to the alumni of the
+                              second plus degree or junior who would like to
+                              reach a specific tech-stack: AI, Blockchain,
+                              Devops...
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card">
+                        <div class="card-header" id="headingFour">
+                           <h2 class="mb-0">
+                              <button
+                                 class="btn btn-link btn-block text-left collapsed"
+                                 type="button"
+                                 data-toggle="collapse"
+                                 data-target="#collapseFour"
+                                 aria-expanded="false"
+                                 aria-controls="collapseFour"
+                              >
+                                 Does Devplus guarantee a job after graduating?
+                              </button>
+                           </h2>
+                        </div>
+                        <div
+                           id="collapseFour"
+                           class="collapse"
+                           aria-labelledby="headingFour"
+                           data-parent="#accordionExample"
+                        >
+                           <div class="card-body">
+                              Yes, it’s could be a good job. Once you get the
+                              second plus (++) you will ready to onboard the
+                              projects of our partners, the most highly
+                              recommended places to work.
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="common__video">
+               <button
+                  class="common-video__backgroundIcon"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+               >
+                  <i class="bx bx-play playIcon"></i>
+               </button>
+               <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+               >
+                  <div class="modal-dialog modal-dialog-centered">
+                     <div class="modal-content">
+                        <iframe
+                           class="modal-content__youtube"
+                           src="https://www.youtube.com/embed/mUjhiT0zSKI"
+                           title="YouTube video player"
+                           frameborder="0"
+                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                           allowfullscreen
+                        ></iframe>
+</div>
+                  </div>
+               </div>
+            </div>
+         </section>
+           <section class="alumni pb-5">
             <h3 class="text-center pt-5 pb-5">What alumni saying</h3>
             <div class="container">
                <div class="row">
@@ -150,14 +588,12 @@
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-      </main>
-      <!-- footer -->
-      <!-- Chính -->
-      <footer>
+                    </div>
+                        </div>
+                     </div>
+           </section>
+
+<footer>
          <div class="container pt-5">
             <div class="row footer-top pt-5">
                <div class="col-lg-3 col-md-12 mb-mb-50 footer-skill">
@@ -235,22 +671,26 @@
             </div>
          </div>
       </footer>
-      <!-- script -->
-      <!-- bootstrap 4 -->
-      <script
-         src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-         crossorigin="anonymous"
-      ></script>
-      <script
-         src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-         crossorigin="anonymous"
-      ></script>
-      <!-- boxicon -->
-      <!-- aos animation -->
-      <script src="./assets/js/app.js"></script>
-      <script src="./assets/js/chinh.js"></script>
+   </main>
+   <!-- footer -->
+   <!-- Chính -->
+   <footer>
+      <div class="container"></div>
+   </footer>
+   <!-- script -->
+   <!-- bootstrap 4 -->
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+   </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+   </script>
+   <!-- aos animation -->
+   <script src="./assets/js/vendor/aos/aos.js"></script>
+   <!-- script -->
+   <script src="./assets/js/app.js"></script>
+   <script src="./assets/js/vuquoc.js"></script>
+     <script src="./assets/js/chinh.js"></script>
       <!-- owl -->
       <script
          src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -258,5 +698,6 @@
          crossorigin="anonymous"
       ></script>
       <script src="./assets/owl-src/owl.carousel.min.js"></script>
-   </body>
+</body>
+
 </html>
