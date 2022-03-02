@@ -52,6 +52,33 @@
    min-height: 615px;
    background-size: cover;
    background-position: center;
+   display: flex;
+   position: relative;
+}
+
+.common-video__backgroundIcon {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #fff;
+   background: #226fb7;
+   width: 70px;
+   height: 70px;
+   border-radius: 100%;
+   text-align: center;
+   cursor: pointer;
+   border-width: 0px;
+}
+
+.playIcon {
+   font-size: 70px;
+   margin-left: 3px;
+}
+
+.modal-content__youtube {
+   width: 560px;
+   height: 315px;
 }
 
 @media screen and (max-width: 900px) {
@@ -74,19 +101,24 @@
    .common__video {
       width: 100%;
    }
+
+   .modal-content__youtube {
+      width: 385px;
+      height: 215px;
+   }
 }
 
-.btn-link:before {
+.accordion .btn-link:before {
    content: '\2212';
    margin: 0px 8px;
 }
 
-.btn-link.collapsed:before {
+.accordion .btn-link.collapsed:before {
    content: '\002b';
    margin: 0px 8px;
 }
 
-.btn-link {
+.accordion .btn-link {
    background: #226fb7;
    color: white;
    border-radius: 0px;
@@ -94,26 +126,26 @@
    font-weight: bold;
 }
 
-.btn-link.collapsed {
+.accordion .btn-link.collapsed {
    background: white;
    color: black;
 }
 
-.btn-link:hover {
+.accordion .btn-link:hover {
    text-decoration: none !important;
    color: white;
 }
 
-.btn-link.collapsed:hover {
+.accordion .btn-link.collapsed:hover {
    text-decoration: none !important;
    color: black;
 }
 
-.card-header {
+.accordion .card-header {
    padding: 0 !important;
 }
 
-.card {
+.accordion .card {
    border-width: 0;
    margin-bottom: 30px;
 }
