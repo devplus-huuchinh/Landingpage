@@ -77,8 +77,8 @@
    function handleZoomImage(event) {
       const imageSrc = event.target.getAttribute('src');
       console.log('imageSrc', imageSrc);
-      const template = `<div class="lightbox">
-      <div class="lightbox-content" data-aos="zoom-in">
+      const template = `<div class="lightbox position-fixed">
+      <div class="lightbox-content d-flex align-items-center justify-content-between" data-aos="zoom-in">
       <i class='bx bxs-left-arrow lightbox-prev'></i>
          <img src="${imageSrc}" alt="" class="lightbox-image" data-aos="zoom-in">
          <i class='bx bxs-right-arrow lightbox-next'></i>
@@ -88,6 +88,7 @@
    }
    let index = 0;
    document.body.addEventListener('click', function (e) {
+      // document.querySelector('.toggle-menu').style.right = '-500px';
       const lightboxImage = document.querySelector('.lightbox-image');
       let lightboxSrc = '';
       if (e.target.matches('.lightbox')) {
