@@ -1,0 +1,157 @@
+.admission {
+   display: flex;
+   align-items: center;
+   background-color: #f3f8f9;
+
+   margin-bottom: 80px;
+}
+
+.admission__image {
+   flex: 1.3;
+}
+
+.admission__image img {
+   height: auto;
+   max-width: 100%;
+}
+
+.admission__description {
+   flex: 1;
+   padding: 0 100px;
+}
+
+.admission__description--button {
+   background-color: #226fb7;
+   font-weight: bold;
+   padding: 16px 58px;
+   border-radius: 30px;
+   border-color: #226fb7;
+}
+
+.admission__description--items {
+   margin-bottom: 25px;
+}
+
+.common {
+   display: flex;
+}
+
+.common__concerns {
+   flex: 1;
+   background-color: #f3f8f9;
+   padding: 40px;
+}
+
+.common__concerns--items {
+   margin-bottom: 35px;
+}
+
+.common__video {
+   flex: 1.3;
+   background: url(../images/devplus/video_03.png);
+   min-height: 615px;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   position: relative;
+}
+
+.common-video__backgroundIcon {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #fff;
+   background: #226fb7;
+   width: 70px;
+   height: 70px;
+   border-radius: 100%;
+   text-align: center;
+   cursor: pointer;
+   border-width: 0px;
+}
+
+.playIcon {
+   font-size: 70px;
+   margin-left: 3px;
+}
+
+.modal-content__youtube {
+   width: 560px;
+   height: 315px;
+}
+
+@media screen and (max-width: 900px) {
+   .admission {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f3f8f9;
+   }
+
+   .admission__description {
+      padding: 25px 40px;
+   }
+
+   .common {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .common__video {
+      width: 100%;
+   }
+
+   .modal-content__youtube {
+      width: 385px;
+      height: 215px;
+   }
+}
+
+.accordion .btn-link:before {
+   content: '\2212';
+   margin: 0px 8px;
+}
+
+.accordion .btn-link.collapsed:before {
+   content: '\002b';
+   margin: 0px 8px;
+}
+
+.accordion .btn-link {
+   background: #226fb7;
+   color: white;
+   border-radius: 0px;
+   padding: 18px 10px;
+   font-weight: bold;
+}
+
+.accordion .btn-link.collapsed {
+   background: white;
+   color: black;
+}
+
+.accordion .btn-link:hover {
+   text-decoration: none !important;
+   color: white;
+}
+
+.accordion .btn-link.collapsed:hover {
+   text-decoration: none !important;
+   color: black;
+}
+
+.accordion .card-header {
+   padding: 0 !important;
+}
+
+.accordion .card {
+   border-width: 0;
+   margin-bottom: 30px;
+}
+
+.btn.focus,
+.btn:focus {
+   box-shadow: none;
+   text-decoration: none !important;
+}
