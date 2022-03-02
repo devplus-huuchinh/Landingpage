@@ -76,51 +76,7 @@
 
    function handleZoomImage(event) {
       document.querySelector('.toggle-menu').style.right = '-500px';
-      const imageSrc = event.target.getAttribute('src');
-      const template = `<div class="lightbox position-fixed">
-      <div class="lightbox-content d-flex align-items-center justify-content-between">
-      <i class='bx bx-x lightbox__button--close'></i>
-      <i class='bx bxs-left-arrow lightbox-prev'></i>
-         <img src="${imageSrc}" alt="" class="lightbox-image" data-aos="zoom-in-down">
-         <i class='bx bxs-right-arrow lightbox-next'></i>
-      </div>
-   </div>`;
-      document.body.insertAdjacentHTML('beforeend', template);
-      const closeLightBox = document.querySelector('.lightbox__button--close');
-      closeLightBox.addEventListener('click', () => {
-         document.querySelector('.lightbox').remove();
-      });
    }
-   let index = 0;
-   document.body.addEventListener('click', function (e) {
-      const lightboxImage = document.querySelector('.lightbox-image');
-      let lightboxSrc = '';
-      if (e.target.matches('.lightbox')) {
-         e.target.parentNode.removeChild(e.target);
-      } else if (e.target.matches('.lightbox-next')) {
-         lightboxSrc = lightboxImage.getAttribute('src');
-         index = [...images].findIndex(
-            (item) => item.getAttribute('src') === lightboxSrc
-         );
-         index = index + 1;
-         if (index > images.length - 1) {
-            index = 0;
-         }
-         const newSrc = [...images][index].getAttribute('src');
-         lightboxImage.setAttribute('src', newSrc);
-      } else if (e.target.matches('.lightbox-prev')) {
-         lightboxSrc = lightboxImage.getAttribute('src');
-         index = [...images].findIndex(
-            (item) => item.getAttribute('src') === lightboxSrc
-         );
-         index = index - 1;
-         if (index < 0) {
-            index = images.length - 1;
-         }
-         const newSrc = [...images][index].getAttribute('src');
-         lightboxImage.setAttribute('src', newSrc);
-      }
-   });
    // AOS scroll
    window.addEventListener('load', () => {
       AOS.init({
@@ -136,5 +92,21 @@
       setTimeout(() => {
          preloader.remove();
       }, 1000);
+   }
+   // popup lightbox image
+   var imagepopup = $('.image-popup');
+   if (imagepopup.length) {
+      $('.image-popup').magnificPopup({
+         type: 'image',
+         callbacks: {
+            beforeOpen: function () {
+               this.st.image.markup = this.st.image.markup.replace(
+                  'mfp-figure',
+                  'mfp-figure animated zoomInDown'
+               );
+            },
+         },
+         gallery: { enabled: true },
+      });
    }
 })();
