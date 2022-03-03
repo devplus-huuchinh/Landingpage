@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  deploy:
+    machine:
+      enabled:true
+    steps:
+      - run:
+        name: Deploy to server
+        command: |
+        ssh $SSH_USER@SSH_HOST "
+        cd /var/www/tysongang.trandinhvan.com/
+        git pull origin master
+        "
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
