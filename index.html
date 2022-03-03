@@ -23,6 +23,12 @@
          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
          crossorigin="anonymous"
       />
+      <!-- lightbox image -->
+      <link
+         rel="stylesheet"
+         href="./assets/js/vendor/lightbox/magnific-popup.css"
+      />
+      <link rel="stylesheet" href="./assets/js/vendor/lightbox/animate.css" />
       <!-- boxicon -->
       <link
          href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
@@ -89,7 +95,7 @@
                   class="header__nav col-lg-9 d-flex align-items-center m-0 mr-auto list-unstyled"
                >
                   <li class="position-relative">
-                     <a href="#" class="header__nav--link">Home</a>
+                     <a href="#" class="header__nav--link active">Home</a>
                   </li>
                   <li class="position-relative">
                      <a href="#about" class="header__nav--link"
@@ -98,8 +104,8 @@
                   </li>
                   <li class="position-relative">
                      <a href="#" class="header__nav--link item--parent"
-                        >Our Programme <i class="bx bx-chevron-down"></i
-                     ></a>
+                        >Our Programme <i class="bx bx-chevron-down"></i>
+                     </a>
                      <ul
                         class="sub__nav position-absolute bg-white list-unstyled"
                      >
@@ -166,43 +172,67 @@
                   companies.
                </p>
             </div>
-            <div class="menu__gallery photos d-flex flex-wrap">
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/1.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/2.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/3.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/4.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/5.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/6.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
+            <div class="menu__gallery d-flex flex-wrap">
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/1.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/1.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/2.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/2.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/3.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/3.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/4.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/4.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/5.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/5.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/6.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/6.png"
+                        alt=""
+                  /></a>
+               </div>
             </div>
             <div class="menu__maps">
                <img src="./assets/images/map.png" alt="" />
@@ -260,7 +290,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="100"
                         >
                            <span class="position-absolute">1</span
                            ><span>Apply Devplus</span>
@@ -268,7 +297,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="200"
                         >
                            <span class="position-absolute">2</span
                            ><span>Testing and Interview</span>
@@ -276,7 +304,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="300"
                         >
                            <span class="position-absolute">3</span
                            ><span>1st plus (+) campus</span>
@@ -284,7 +311,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="400"
                         >
                            <span class="position-absolute">4</span
                            ><span>2nd plus (++) campus</span>
@@ -292,7 +318,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="500"
                         >
                            <span class="position-absolute">5</span
                            ><span>Onboard & start your career</span>
@@ -329,11 +354,11 @@
             style="background-color: #f3f8f9; padding: 80px 0"
          >
             <div class="container">
-               <h2 class="title">
+               <h2 class="title-content">
                   What an engineer after Devplus will must have?
                </h2>
                <div class="devplus__list">
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/1.png" />
                      </div>
@@ -342,7 +367,7 @@
                         <p class="content">Algorithm, Design pattern</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/2.png" />
                      </div>
@@ -351,7 +376,7 @@
                         <p class="content">SQL Syntax</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/3.png" />
                      </div>
@@ -360,16 +385,16 @@
                         <p class="content">Unit testing, TDD</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/4.png" />
                      </div>
                      <div class="devplus__list__item__content">
                         <p class="title">Front-end</p>
-                        <p class="content">HTML/CSS/Js, ReactJS/VueJs</p>
+                        <p class="content">HTML/CSS/JS, ReactJS/VueJS</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/5.png" />
                      </div>
@@ -378,7 +403,7 @@
                         <p class="content">PHP, NodeJS</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/6.png" />
                      </div>
@@ -387,7 +412,7 @@
                         <p class="content">Agile/Scrum</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/7.png" />
                      </div>
@@ -396,7 +421,7 @@
                         <p class="content">Basic conversion</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/8.png" />
                      </div>
@@ -405,7 +430,7 @@
                         <p class="content">HORENSO</p>
                      </div>
                   </div>
-                  <div class="devplus__list__item">
+                  <div class="devplus__list__item" data-aos="fade-up">
                      <div class="devplus__list__item__icon">
                         <img src="./assets/images/categories/icons/9.png" />
                      </div>
@@ -428,17 +453,17 @@
             "
          >
             <div class="container">
-               <h2 class="title">Our main campus</h2>
+               <h2 class="title-content">Our main campus</h2>
                <div class="campus__list">
-                  <div class="campus__card">
+                  <div class="campus__card" data-aos="fade-up">
                      <img src="./assets/images/devplus/One_plus.png" alt="" />
                      <h3>One plus (+) Programing foundation</h3>
                   </div>
-                  <div class="campus__card">
+                  <div class="campus__card" data-aos="fade-up">
                      <img src="./assets/images/devplus/Two_plus.png" alt="" />
                      <h3>Two plus (++) Skill up to to get ready</h3>
                   </div>
-                  <div class="campus__card">
+                  <div class="campus__card" data-aos="fade-up">
                      <img src="./assets/images/devplus/Three_plus.png" alt="" />
                      <h3>Three plus (+++) How to become a senior</h3>
                   </div>
@@ -450,7 +475,11 @@
             <div class="admission__image">
                <img src="./assets/images/devplus/Admission_for_2021.png" />
             </div>
-            <div class="admission__description">
+            <div
+               class="admission__description"
+               data-aos="fade-up"
+               data-aos-duration="1500"
+            >
                <h1 class="admission__description--items">Admission for 2021</h1>
                <p class="admission__description--items">
                   Disclaimer: This position is expected to start around Feb 2022
@@ -728,7 +757,6 @@
             </div>
          </section>
       </main>
-      <!-- Chính -->
       <footer>
          <div class="container pt-5">
             <div class="row footer-top pt-5">
@@ -820,6 +848,8 @@
       ></script>
       <!-- aos animation -->
       <script src="./assets/js/vendor/aos/aos.js"></script>
+      <!-- lightbox script -->
+      <script src="./assets/js/vendor/lightbox/jquery.magnific-popup.min.js"></script>
       <!-- script -->
       <script src="./assets/js/app.js"></script>
       <script src="./assets/js/vuquoc.js"></script>

@@ -5,12 +5,15 @@
    const menu = document.querySelector('.toggle-menu');
    const closeMenu = document.querySelector('.menu__button--close');
    const lineWrap = closeMenu.querySelector('.line-wrap');
+   const gallery = document.querySelectorAll('.gallery__item');
 
    openMenu.addEventListener('click', function () {
       menu.style.right = '0';
    });
    closeMenu.addEventListener('click', function () {
       menu.style.right = '-500px';
+      document.querySelector('.mfp-bg').style.display = 'none';
+      document.querySelector('.mfp-wrap').style.display = 'none';
    });
 
    closeMenu.addEventListener('mouseover', function () {
@@ -19,6 +22,14 @@
    closeMenu.addEventListener('mouseout', function () {
       lineWrap.style.transform = 'rotate(0deg)';
    });
+   // handle gallery
+   gallery.forEach(function (item) {
+      item.addEventListener('click', function () {
+         document.querySelector('.mfp-bg').style.display = 'block';
+         document.querySelector('.mfp-wrap').style.display = 'block';
+      });
+   });
+
    // back to top button
    const backtotop = document.querySelector('.back-to-top');
    window.addEventListener('scroll', () => {
@@ -61,6 +72,7 @@
    const subNav = document.querySelector('.sub__nav');
    const closeSubNav = document.querySelector('.sub__nav--close a');
    itemParent.addEventListener('click', function () {
+      subNav.style.display = 'none';
       subNav.classList.toggle('open');
       iconSubMenu.classList.toggle('bx-chevron-down');
       iconSubMenu.classList.toggle('bx-chevron-up');
@@ -70,57 +82,20 @@
       iconSubMenu.classList.add('bx-chevron-down');
       iconSubMenu.classList.remove('bx-chevron-up');
    });
-   // lightbox toogle menu
-   const images = document.querySelectorAll('.menu__gallery img');
-   images.forEach((item) => item.addEventListener('click', handleZoomImage));
 
-   function handleZoomImage(event) {
-      document.querySelector('.toggle-menu').style.right = '-500px';
-      const imageSrc = event.target.getAttribute('src');
-      const template = `<div class="lightbox position-fixed">
-      <div class="lightbox-content d-flex align-items-center justify-content-between">
-      <i class='bx bx-x lightbox__button--close'></i>
-      <i class='bx bxs-left-arrow lightbox-prev'></i>
-         <img src="${imageSrc}" alt="" class="lightbox-image" data-aos="zoom-in-down">
-         <i class='bx bxs-right-arrow lightbox-next'></i>
-      </div>
-   </div>`;
-      document.body.insertAdjacentHTML('beforeend', template);
-      const closeLightBox = document.querySelector('.lightbox__button--close');
-      closeLightBox.addEventListener('click', () => {
-         document.querySelector('.lightbox').remove();
-      });
-   }
-   let index = 0;
-   document.body.addEventListener('click', function (e) {
-      const lightboxImage = document.querySelector('.lightbox-image');
-      let lightboxSrc = '';
-      if (e.target.matches('.lightbox')) {
-         e.target.parentNode.removeChild(e.target);
-      } else if (e.target.matches('.lightbox-next')) {
-         lightboxSrc = lightboxImage.getAttribute('src');
-         index = [...images].findIndex(
-            (item) => item.getAttribute('src') === lightboxSrc
-         );
-         index = index + 1;
-         if (index > images.length - 1) {
-            index = 0;
-         }
-         const newSrc = [...images][index].getAttribute('src');
-         lightboxImage.setAttribute('src', newSrc);
-      } else if (e.target.matches('.lightbox-prev')) {
-         lightboxSrc = lightboxImage.getAttribute('src');
-         index = [...images].findIndex(
-            (item) => item.getAttribute('src') === lightboxSrc
-         );
-         index = index - 1;
-         if (index < 0) {
-            index = images.length - 1;
-         }
-         const newSrc = [...images][index].getAttribute('src');
-         lightboxImage.setAttribute('src', newSrc);
-      }
-   });
+   // const menuLinks = document.querySelectorAll('.header__nav a');
+   // menuLinks.forEach(function (item) {
+   //    item.addEventListener('click', function () {
+   //       mobileMenu.classList.remove('open-menu');
+   //    });
+   // });
+   // lightbox toogle menu
+   // const images = document.querySelectorAll('.menu__gallery img');
+   // images.forEach((item) => item.addEventListener('click', handleZoomImage));
+
+   // function handleZoomImage(event) {
+   //    document.querySelector('.toggle-menu').style.right = '-500px';
+   // }
    // AOS scroll
    window.addEventListener('load', () => {
       AOS.init({
@@ -137,4 +112,29 @@
          preloader.remove();
       }, 1000);
    }
+   // popup lightbox image
+   var imagepopup = $('.image-popup');
+   if (imagepopup.length) {
+      $('.image-popup').magnificPopup({
+         type: 'image',
+         callbacks: {
+            beforeOpen: function () {
+               this.st.image.markup = this.st.image.markup.replace(
+                  'mfp-figure',
+                  'mfp-figure animated zoomInDown'
+               );
+            },
+         },
+         gallery: { enabled: true },
+      });
+   }
+   // dropdown menu
+   $('.header__nav > li').hover(
+      function () {
+         $('.sub__nav', this).slideDown();
+      },
+      function () {
+         $('.sub__nav', this).slideUp();
+      }
+   );
 })();
