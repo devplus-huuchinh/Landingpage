@@ -15,7 +15,7 @@ jobs:
 
 workflows:
   version: 2
-  deploy:
+  deploy-project:
     jobs:
       - deploy:
           filters:
