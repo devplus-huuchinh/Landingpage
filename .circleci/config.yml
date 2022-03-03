@@ -1,20 +1,25 @@
 version: 2.1
 
+executors:
+  html:
+    working_directory: ~/workspace/frontend
+
 jobs:
   deploy:
     machine:
-      enabled: true
+        enabled: true
     steps:
       - run:
           name: Deploy to server
           command: |
-          ssh $SSH_USER@SSH_HOST "
-          cd /var/www/tysongang.trandinhvan.com/
-          git pull origin master
-          "
+            ssh $SSH_USER@SSH_HOST "
+            cd /var/www/tysongang.trandinhvan.com/
+            git pull origin master
+            "
+
 workflows:
   version: 2
-  deploy:
+  build-and-deploy:
     jobs:
       - deploy:
           filters:
