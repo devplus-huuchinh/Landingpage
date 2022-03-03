@@ -12,8 +12,8 @@
    });
    closeMenu.addEventListener('click', function () {
       menu.style.right = '-500px';
-      document.querySelector('.mfp-bg').style.display = 'none';
-      document.querySelector('.mfp-wrap').style.display = 'none';
+      document.querySelector('.mfp-bg').classList.add('setwidth');
+      document.querySelector('.mfp-wrap').classList.add('setwidth');
    });
 
    closeMenu.addEventListener('mouseover', function () {
@@ -25,8 +25,10 @@
    // handle gallery
    gallery.forEach(function (item) {
       item.addEventListener('click', function () {
-         document.querySelector('.mfp-bg').style.display = 'block';
-         document.querySelector('.mfp-wrap').style.display = 'block';
+         document
+            .querySelector('.mfp-bg.mfp-ready')
+            .classList.remove('setwidth');
+         document.querySelector('.mfp-wrap').classList.remove('setwidth');
       });
    });
 

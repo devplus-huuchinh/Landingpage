@@ -13,7 +13,7 @@
    width: 150px;
    height: 150px;
    border-radius: 100rem;
-   border-top: 2px solid #226fb7;
+   border-top: 5px solid #226fb7;
    animation: spinner 2s linear infinite;
    position: absolute;
 }
@@ -22,13 +22,13 @@
    width: 150px;
    height: 150px;
    border-radius: 100rem;
-   border-bottom: 2px solid #ff6651;
-   animation: spinner 2s linear infinite;
+   border: 3px solid #eee;
    position: absolute;
+   z-index: -1;
 }
 @keyframes zoomPreloader {
    0% {
-      background-size: 50px;
+      background-size: 80px;
    }
    100% {
       background-size: 100px;
@@ -369,10 +369,16 @@ header.sticky .header__nav--link {
    line-height: 1.8;
 }
 .mfp-wrap {
-   width: calc(100% - 500px) !important;
+   width: calc(100% - 500px);
 }
 .mfp-bg {
-   width: calc(100% - 500px) !important;
+   width: calc(100% - 500px);
+}
+.mfp-wrap.setwidth {
+   width: 100%;
+}
+.mfp-bg.setwidth {
+   width: 100%;
 }
 
 .menu__gallery {
