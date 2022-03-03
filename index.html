@@ -23,6 +23,12 @@
          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
          crossorigin="anonymous"
       />
+      <!-- lightbox image -->
+      <link
+         rel="stylesheet"
+         href="./assets/js/vendor/lightbox/magnific-popup.css"
+      />
+      <link rel="stylesheet" href="./assets/js/vendor/lightbox/animate.css" />
       <!-- boxicon -->
       <link
          href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
@@ -89,7 +95,7 @@
                   class="header__nav col-lg-9 d-flex align-items-center m-0 mr-auto list-unstyled"
                >
                   <li class="position-relative">
-                     <a href="#" class="header__nav--link">Home</a>
+                     <a href="#" class="header__nav--link active">Home</a>
                   </li>
                   <li class="position-relative">
                      <a href="#about" class="header__nav--link"
@@ -98,8 +104,8 @@
                   </li>
                   <li class="position-relative">
                      <a href="#" class="header__nav--link item--parent"
-                        >Our Programme <i class="bx bx-chevron-down"></i
-                     ></a>
+                        >Our Programme <i class="bx bx-chevron-down"></i>
+                     </a>
                      <ul
                         class="sub__nav position-absolute bg-white list-unstyled"
                      >
@@ -166,43 +172,67 @@
                   companies.
                </p>
             </div>
-            <div class="menu__gallery photos d-flex flex-wrap">
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/1.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/2.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/3.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/4.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/5.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
-               <a href="#" class="gallery__item overflow-hidden"
-                  ><img
-                     src="/assets/images/devplus/6.png"
-                     alt=""
-                     class="gallery-image"
-               /></a>
+            <div class="menu__gallery d-flex flex-wrap">
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/1.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/1.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/2.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/2.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/3.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/3.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/4.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/4.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/5.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/5.png"
+                        alt=""
+                  /></a>
+               </div>
+               <div class="gallery-img overflow-hidden">
+                  <a
+                     class="image-popup gallery__item overflow-hidden"
+                     href="assets/images/devplus/6.png"
+                     ><img
+                        class="gallery-image"
+                        src="assets/images/devplus/6.png"
+                        alt=""
+                  /></a>
+               </div>
             </div>
             <div class="menu__maps">
                <img src="./assets/images/map.png" alt="" />
@@ -260,7 +290,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="100"
                         >
                            <span class="position-absolute">1</span
                            ><span>Apply Devplus</span>
@@ -268,7 +297,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="200"
                         >
                            <span class="position-absolute">2</span
                            ><span>Testing and Interview</span>
@@ -276,7 +304,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="300"
                         >
                            <span class="position-absolute">3</span
                            ><span>1st plus (+) campus</span>
@@ -284,7 +311,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="400"
                         >
                            <span class="position-absolute">4</span
                            ><span>2nd plus (++) campus</span>
@@ -292,7 +318,6 @@
                         <li
                            class="road__item position-relative d-flex flex-column overflow-hidden"
                            data-aos="fade-up"
-                           data-aos-delay="500"
                         >
                            <span class="position-absolute">5</span
                            ><span>Onboard & start your career</span>
@@ -821,7 +846,7 @@
       <footer>
          <div class="container"></div>
       </footer>
-      <!-- script -->
+
       <!-- bootstrap 4 -->
       <script
          src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -835,6 +860,8 @@
       ></script>
       <!-- aos animation -->
       <script src="./assets/js/vendor/aos/aos.js"></script>
+      <!-- lightbox script -->
+      <script src="./assets/js/vendor/lightbox/jquery.magnific-popup.min.js"></script>
       <!-- script -->
       <script src="./assets/js/app.js"></script>
       <script src="./assets/js/vuquoc.js"></script>
