@@ -1,6 +1,6 @@
 @import url(./app.css);
 .alumni {
-   padding-top: 8%;
+   padding-top: 10%;
 }
 .alumni h3 {
    font-family: 'Nunito', sans-serif;
@@ -163,7 +163,7 @@ footer .footer-bot .footer-bot__logo a img {
 }
 
 footer .footer-bot .footer-bot__facebook {
-   padding-top: 7px;
+   padding-top: 0px;
    font-size: 17px;
    color: gray;
    font-weight: 400;
