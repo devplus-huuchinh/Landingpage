@@ -5,12 +5,15 @@
    const menu = document.querySelector('.toggle-menu');
    const closeMenu = document.querySelector('.menu__button--close');
    const lineWrap = closeMenu.querySelector('.line-wrap');
+   const gallery = document.querySelectorAll('.gallery__item');
 
    openMenu.addEventListener('click', function () {
       menu.style.right = '0';
    });
    closeMenu.addEventListener('click', function () {
       menu.style.right = '-500px';
+      document.querySelector('.mfp-bg').style.display = 'none';
+      document.querySelector('.mfp-wrap').style.display = 'none';
    });
 
    closeMenu.addEventListener('mouseover', function () {
@@ -19,6 +22,14 @@
    closeMenu.addEventListener('mouseout', function () {
       lineWrap.style.transform = 'rotate(0deg)';
    });
+   // handle gallery
+   gallery.forEach(function (item) {
+      item.addEventListener('click', function () {
+         document.querySelector('.mfp-bg').style.display = 'block';
+         document.querySelector('.mfp-wrap').style.display = 'block';
+      });
+   });
+
    // back to top button
    const backtotop = document.querySelector('.back-to-top');
    window.addEventListener('scroll', () => {
@@ -61,6 +72,7 @@
    const subNav = document.querySelector('.sub__nav');
    const closeSubNav = document.querySelector('.sub__nav--close a');
    itemParent.addEventListener('click', function () {
+      subNav.style.display = 'none';
       subNav.classList.toggle('open');
       iconSubMenu.classList.toggle('bx-chevron-down');
       iconSubMenu.classList.toggle('bx-chevron-up');
@@ -70,13 +82,20 @@
       iconSubMenu.classList.add('bx-chevron-down');
       iconSubMenu.classList.remove('bx-chevron-up');
    });
-   // lightbox toogle menu
-   const images = document.querySelectorAll('.menu__gallery img');
-   images.forEach((item) => item.addEventListener('click', handleZoomImage));
 
-   function handleZoomImage(event) {
-      document.querySelector('.toggle-menu').style.right = '-500px';
-   }
+   // const menuLinks = document.querySelectorAll('.header__nav a');
+   // menuLinks.forEach(function (item) {
+   //    item.addEventListener('click', function () {
+   //       mobileMenu.classList.remove('open-menu');
+   //    });
+   // });
+   // lightbox toogle menu
+   // const images = document.querySelectorAll('.menu__gallery img');
+   // images.forEach((item) => item.addEventListener('click', handleZoomImage));
+
+   // function handleZoomImage(event) {
+   //    document.querySelector('.toggle-menu').style.right = '-500px';
+   // }
    // AOS scroll
    window.addEventListener('load', () => {
       AOS.init({
@@ -109,4 +128,13 @@
          gallery: { enabled: true },
       });
    }
+   // dropdown menu
+   $('.header__nav > li').hover(
+      function () {
+         $('.sub__nav', this).slideDown();
+      },
+      function () {
+         $('.sub__nav', this).slideUp();
+      }
+   );
 })();

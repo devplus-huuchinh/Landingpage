@@ -5,7 +5,8 @@
    width: 100%;
    height: 100vh;
    z-index: 9999;
-   position: relative;
+   background-size: 100px;
+   animation: zoomPreloader 3s infinite alternate;
 }
 #preloader::before {
    content: '';
@@ -24,6 +25,14 @@
    border-bottom: 2px solid #ff6651;
    animation: spinner 2s linear infinite;
    position: absolute;
+}
+@keyframes zoomPreloader {
+   0% {
+      background-size: 50px;
+   }
+   100% {
+      background-size: 100px;
+   }
 }
 @keyframes spinner {
    0% {
@@ -129,7 +138,7 @@ header.sticky .header__nav--link {
       border-bottom: 1px solid var(--black) !important;
    }
    .sub__nav {
-      top: 100% !;
+      top: 100%;
    }
    .sub__nav--close {
       padding: 10px 20px;
@@ -154,23 +163,23 @@ header.sticky .header__nav--link {
    text-transform: uppercase;
    color: var(--black);
 }
+.header__nav--link.active {
+   color: #226fb7 !important;
+}
 .sub__nav {
-   top: calc(100% - 15px);
+   min-width: 250px;
+   padding: 15px 0;
    left: 0;
    right: 0;
-   opacity: 0;
-   visibility: hidden;
-   transition: all 0.3s ease;
-   z-index: 9998;
-   min-width: 300px;
-   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-   border-radius: 3px;
+   display: none;
+   z-index: 9999;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .sub__nav--item {
    display: block;
-   padding: 10px 25px;
-   font-weight: 600;
+   padding: 10px 30px;
    color: var(--black);
+   font-weight: 400;
 }
 .sub__nav--item:hover {
    text-decoration: none;
@@ -179,9 +188,8 @@ header.sticky .header__nav--link {
    color: #226fb7;
    text-decoration: none;
 }
-.header__nav li:hover ul.sub__nav {
-   opacity: 1;
-   visibility: visible;
+.header__nav li:hover > a {
+   color: #226fb7;
 }
 .header__button--toggle {
    width: 30px;
@@ -252,8 +260,10 @@ header.sticky .header__nav--link {
       transition: all 0.5s ease;
       font-size: 40px;
    }
+}
+@media screen and (max-width: 1024px) {
    .sub__nav.open {
-      display: block;
+      display: block !important;
    }
 }
 .hero {
@@ -320,6 +330,7 @@ header.sticky .header__nav--link {
    padding: 30px 50px;
    background-color: #fafafa;
    transition: all 0.3s ease;
+   cursor: default;
 }
 .toggle-menu::-webkit-scrollbar {
    display: none;
@@ -357,6 +368,13 @@ header.sticky .header__nav--link {
    margin: 30px 0 26px 0;
    line-height: 1.8;
 }
+.mfp-wrap {
+   width: calc(100% - 500px) !important;
+}
+.mfp-bg {
+   width: calc(100% - 500px) !important;
+}
+
 .menu__gallery {
    --f-columns: 3;
    --f-gap: 10px;
