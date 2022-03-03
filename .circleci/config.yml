@@ -1,9 +1,5 @@
 version: 2.1
 
-executors:
-  html:
-    working_directory: ~/workspace/frontend
-
 jobs:
   deploy:
     machine:
