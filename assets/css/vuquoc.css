@@ -6,7 +6,7 @@
    height: 100vh;
    z-index: 9999;
    background-size: 100px;
-   animation: zoomPreloader 3s infinite alternate;
+   animation: zoomPreloader 2s linear infinite;
 }
 #preloader::before {
    content: '';
@@ -29,9 +29,11 @@
 @keyframes zoomPreloader {
    0% {
       background-size: 80px;
+      transition: all 0.25s linear;
    }
    100% {
       background-size: 100px;
+      transition: all 0.25s linear;
    }
 }
 @keyframes spinner {
@@ -72,20 +74,22 @@
 header {
    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-header > .container {
-   padding-left: 0;
-}
-header.sticky {
-   position: sticky;
-   top: 0;
-   right: 0;
-   left: 0;
-   z-index: 9998;
-   background: var(--white);
-   transition: all 0.3s ease;
-}
-header.sticky .header__nav--link {
-   line-height: 90px;
+@media screen and (min-width: 992px) {
+   .header__nav {
+      padding-left: 30px;
+   }
+   header.sticky {
+      position: sticky;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 9998;
+      background: var(--white);
+      transition: all 0.3s ease;
+   }
+   header.sticky .header__nav--link {
+      line-height: 90px;
+   }
 }
 .header__brand .header__image {
    max-height: 35px;
@@ -161,9 +165,7 @@ header.sticky .header__nav--link {
       text-decoration: none;
    }
 }
-.header__nav {
-   padding-left: 30px;
-}
+
 .header__nav > li {
    margin-right: 40px;
 }
