@@ -17,6 +17,7 @@ body {
    font-weight: 400;
    scroll-behavior: smooth;
    scroll-padding-top: 162px;
+   overflow-x: hidden;
 }
 * {
    box-sizing: border-box;
@@ -132,12 +133,13 @@ img {
 header {
    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
 @media screen and (min-width: 992px) {
    .header__nav {
       padding-left: 30px;
    }
    header.sticky {
-      position: sticky;
+      position: fixed;
       top: 0;
       right: 0;
       left: 0;
@@ -226,6 +228,11 @@ header {
 
 .header__nav > li {
    margin-right: 40px;
+}
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+   .header__nav > li {
+      margin-right: 30px;
+   }
 }
 .header__nav--link {
    padding-left: 18px;
@@ -823,14 +830,14 @@ header {
 }
 
 .accordion .btn-link:before {
-   content: url(../svg/bell-off.svg);
+   content: url(../images/svg/bell-off.svg);
    margin: 0px 8px;
    color: white;
    vertical-align: middle;
 }
 
 .accordion .btn-link.collapsed:before {
-   content: url(../svg/bell.svg);
+   content: url(../images/svg/bell.svg);
    margin: 0px 8px;
 }
 
