@@ -30,30 +30,27 @@
    });
 
    const backtotop = document.querySelector('.back-to-top');
-   window.addEventListener('scroll', () => {
-      if (
-         document.body.scrollTop > 300 ||
-         document.documentElement.scrollTop > 300
-      ) {
-         backtotop.classList.add('active');
-      } else {
-         backtotop.classList.remove('active');
-      }
-   });
-   backtotop.addEventListener('click', (e) => {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-   });
    const header = document.querySelector('header');
-   window.addEventListener('scroll', function () {
+   window.addEventListener('scroll', () => {
       if (
          document.body.scrollTop > 120 ||
          document.documentElement.scrollTop > 120
       ) {
          header.classList.add('sticky');
+         if (
+            document.body.scrollTop > 300 ||
+            document.documentElement.scrollTop > 300
+         ) {
+            backtotop.classList.add('active');
+         }
       } else {
+         backtotop.classList.remove('active');
          header.classList.remove('sticky');
       }
+   });
+   backtotop.addEventListener('click', (e) => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
    });
 
    const mobileMenu = document.querySelector('.header__nav');
