@@ -60,6 +60,17 @@
          header.classList.remove('sticky');
       }
    });
+   // sticky header
+   // const sticky = header.offsetTop;
+   // console.log('sticky', sticky);
+   // window.addEventListener('scroll', function () {
+   //    if (window.pageYOffset >= sticky) {
+   //       header.classList.add('sticky');
+   //    } else {
+   //       header.classList.remove('sticky');
+   //    }
+   // });
+
    // handle mobile menu
    const mobileMenu = document.querySelector('.header__nav');
    const btnNavigation = document.querySelector('.mobile-nav-toggle');
