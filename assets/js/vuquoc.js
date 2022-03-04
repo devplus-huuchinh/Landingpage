@@ -15,13 +15,6 @@
       document.querySelector('.mfp-bg').classList.add('setwidth');
       document.querySelector('.mfp-wrap').classList.add('setwidth');
    });
-
-   closeMenu.addEventListener('mouseover', function () {
-      lineWrap.style.transform = 'rotate(360deg)';
-   });
-   closeMenu.addEventListener('mouseout', function () {
-      lineWrap.style.transform = 'rotate(0deg)';
-   });
    // handle gallery
    gallery.forEach(function (item) {
       item.addEventListener('click', function () {
@@ -30,6 +23,13 @@
             .classList.remove('setwidth');
          document.querySelector('.mfp-wrap').classList.remove('setwidth');
       });
+   });
+   // handle animation close toggle menu bar
+   closeMenu.addEventListener('mouseover', function () {
+      lineWrap.style.transform = 'rotate(360deg)';
+   });
+   closeMenu.addEventListener('mouseout', function () {
+      lineWrap.style.transform = 'rotate(0deg)';
    });
 
    // back to top button
@@ -60,16 +60,6 @@
          header.classList.remove('sticky');
       }
    });
-   // sticky header
-   // const sticky = header.offsetTop;
-   // console.log('sticky', sticky);
-   // window.addEventListener('scroll', function () {
-   //    if (window.pageYOffset >= sticky) {
-   //       header.classList.add('sticky');
-   //    } else {
-   //       header.classList.remove('sticky');
-   //    }
-   // });
 
    // handle mobile menu
    const mobileMenu = document.querySelector('.header__nav');
